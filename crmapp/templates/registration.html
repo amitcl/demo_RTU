@@ -1,0 +1,80 @@
+{% extends "parent.html"%}
+{% block body %}
+<h1 style="color:blue;text-align:center;">Customer registration Form</h1>
+{% if msg %}
+<p style="text-align: center;color:blue">{{msg}}</p>
+
+{% endif %}
+<form class="form-group"method="post">
+    {% csrf_token %}
+    <table class="table" style="margin-auto;">
+        <tr>
+            <td>
+                enter name
+            </td>
+            <td>
+                <input type="text" name="name" class="form-control" required placeholder="enter name">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                select gender
+            </td>
+            <td>
+                <input type="radio" name="gender" value="Male" class="form-check-input"/>Male
+                <input type="radio" name="gender" value="Female" class="form-check-input"/>Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                enter address
+            </td>
+            <td>
+                <textarea name="address" class="form-control" required></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                enter contactno
+            </td>
+            <td>
+                <input type="number" name="contactno" class="form-control" required placeholder="enter contact no"/>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                enter emailaddress
+            </td>
+            <td>
+                <input type="email" name="emailaddress" class="form-control" required placeholder="enter email address"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                enter password
+            </td>
+            <td>
+                <input type="password" name="password" class="form-control" required placeholder="Enter password"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                confirm password
+            </td>
+            <td>
+                <input type="password" name="confirmpassword" class="form-control" required placeholder="Enter confirm password"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </td>
+        </tr>
+
+    </table>
+</form>
+{% endblock body %}
